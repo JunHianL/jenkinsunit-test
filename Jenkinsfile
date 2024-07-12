@@ -1,13 +1,5 @@
 pipeline {
-	agent {
-		docker {
-			image 'composer:latest'
-		}
-	}
-	environment {
-        	DOCKER_TLS_CERTDIR = ''
-        	DOCKER_HOST = ''
-        }
+	agent any
 	stages {
 		stage('Build') {
 			steps {
