@@ -1,9 +1,13 @@
 pipeline {
 	agent {
 		docker {
-			image 'myjenkins-blueocean:2.452.3-1'
+			image 'composer-latest'
 		}
 	}
+	environment {
+        	DOCKER_TLS_CERTDIR = ''
+        	DOCKER_HOST = ''
+        }
 	stages {
 		stage('Build') {
 			steps {
